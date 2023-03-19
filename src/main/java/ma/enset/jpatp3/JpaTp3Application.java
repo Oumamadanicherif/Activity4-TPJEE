@@ -6,22 +6,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
-import java.util.List;
-
 @SpringBootApplication
-public class JpaTp3Application implements CommandLineRunner {
+public class JpaTp3Application  {
     @Autowired
     private PatientRepository patientRepository;
     public static void main(String[] args) {
         SpringApplication.run(JpaTp3Application.class, args);
     }
-
-    @Override
-    public void run(String... args) throws Exception {
+    //@Bean
+    CommandLineRunner commandlineRunner() {
+        return args -> {
         patientRepository.save(
-                new Patient(null,"Oumaima",new Date(),false,50)
+                new Patient(null,"Oumaima",new Date(),false,150)
         );
         patientRepository.save(
                 new Patient(null,"Salim",new Date(),true,100)
@@ -29,23 +28,15 @@ public class JpaTp3Application implements CommandLineRunner {
         patientRepository.save(
                 new Patient(null,"Ahmed",new Date(),false,230)
         );
-        List<Patient> patients = patientRepository.findAll();
-        patients.forEach(patient -> {
-            System.out.println("===============================================");
-            System.out.println(patient.getId());
-            System.out.println(patient.getNom());
-            System.out.println(patient.getScore());
-            System.out.println(patient.getDateNaissanec());
-            System.out.println(patient.isMalade());
-        });
-        System.out.println("********************************************");
-        Patient patient=patientRepository.findById(1L).orElse(null);
-        if(patient !=null){
-            System.out.println(patient.isMalade());
-            System.out.println(patient.getNom());
-        }
-        patient.setScore(870);
-        patientRepository.save(patient);
+        patientRepository.save(
+                new Patient(null,"Salma",new Date(),true,130)
+        );
+        // affichage de tous les patients
+            patientRepository.findAll().forEach(
+                    p-> {
+                        System.out.println(p.getNom());
+                    });
+        };
 
     }
 }
