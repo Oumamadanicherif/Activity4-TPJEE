@@ -1,4 +1,4 @@
-package ma.enset.jpatp3;
+package ma.enset.jpatp4;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

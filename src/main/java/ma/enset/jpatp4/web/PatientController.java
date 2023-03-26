@@ -1,9 +1,9 @@
-package ma.enset.jpatp3.web;
+package ma.enset.jpatp4.web;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
-import ma.enset.jpatp3.entities.Patient;
-import ma.enset.jpatp3.repositories.PatientRepository;
+import ma.enset.jpatp4.entities.Patient;
+import ma.enset.jpatp4.repositories.PatientRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;

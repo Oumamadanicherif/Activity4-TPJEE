@@ -1,12 +1,11 @@
-package ma.enset.jpatp3;
+package ma.enset.jpatp4;
 
-import ma.enset.jpatp3.entities.Patient;
-import ma.enset.jpatp3.repositories.PatientRepository;
+import ma.enset.jpatp4.entities.Patient;
+import ma.enset.jpatp4.repositories.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 
 import java.util.Date;
 @SpringBootApplication
